@@ -72,8 +72,15 @@ input_scaled = scaler.transform(input_data)
 
 # Predict
 if st.button("Predict Price"):
-    prediction_usd = model.predict(input_scaled)[0]
-    usd_to_inr = 83.0  # Use current USD to INR rate
-    prediction_inr = prediction_usd * usd_to_inr
-    st.success(f"Predicted Car Price: ₹{prediction_inr:,.0f}")
+    try:
+        # Model prediction
+        prediction_usd = model.predict(input_scaled)[0]
+        
+        # Convert to INR and display result
+        usd_to_inr = 83.0  # Use current USD to INR rate
+        prediction_inr = prediction_usd * usd_to_inr
+        st.success(f"Predicted Car Price: ₹{prediction_inr:,.0f}")
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
+
 

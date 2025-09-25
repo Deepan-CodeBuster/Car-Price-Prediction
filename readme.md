@@ -50,8 +50,9 @@ The dataset includes various attributes of cars such as:
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/car-price-predictor.git
-cd car-price-predictor
+mkdir car-price-prediction
+cd car-price-prediction
+git clone https://github.com/Deepan-CodeBuster/Car-Price-Prediction.git
 ```
 
 #### 2. Install Dependencies
